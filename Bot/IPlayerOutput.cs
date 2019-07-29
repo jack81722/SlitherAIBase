@@ -1,4 +1,5 @@
 using FTServer.Projects.Slither.Packet;
+using SlitherEvo.Synchronize;
 
 namespace GameServer
 {
@@ -6,7 +7,7 @@ namespace GameServer
     {
         void SendInput(float angle);
         void SendInput(Skill.Category skill);
-        void Rebirth(int type);
+        void Rebirth(ERebirth type);
 
         void UseItem();
 

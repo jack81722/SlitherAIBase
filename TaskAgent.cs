@@ -5,6 +5,7 @@ namespace ConsoleApp1
 {
     public class TaskAgent
     {
+        public const int Delay = 5;
         private event Action CallbackPool;
         private Task _Main;
 
@@ -19,7 +20,7 @@ namespace ConsoleApp1
                 while (true)
                 {
                     CallbackPool?.Invoke();
-                    await Task.Delay(5);
+                    await Task.Delay(Delay);
                 }
             }
         }

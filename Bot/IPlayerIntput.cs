@@ -7,7 +7,7 @@ using GamingRoom.Gaming.Room.GameLogic.GameEventSystem;
 
 namespace GameServer
 {
-    public interface IPlayerIntput
+    public interface IPlayerInput
     {
         //SimWorld GetWorld();
         event Action<EnvironmentPacket> onReceiveEnvironment;

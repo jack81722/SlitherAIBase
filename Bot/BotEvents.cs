@@ -2,10 +2,10 @@ namespace GameServer
 {
     public class BotEvents
     {
-        public IPlayerIntput input;
+        public IPlayerInput input;
         public IPlayerOutput output;
 
-        public BotEvents(IPlayerIntput input, IPlayerOutput output)
+        public BotEvents(IPlayerInput input, IPlayerOutput output)
         {
             this.input = input;
             this.output = output;

@@ -1,11 +1,12 @@
 using SlitherEvo;
+using System;
 
 namespace GameServer
 {
     public interface IBotProxy
     {
-        void GameStart(Account account,byte slotId,BotEvents bot);
+        void GameStart(Account account,byte slotId, BotEvents bot);
 
-        void GameUpdate();
+        void GameUpdate(TimeSpan time);
     }
 }

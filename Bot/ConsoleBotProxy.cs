@@ -1,3 +1,4 @@
+using System;
 using FTServer.Projects.Slither.Packet;
 using GamingRoom.Gaming.Packet;
 using GamingServer.Gaming.Packet;
@@ -32,7 +33,7 @@ namespace GameServer
             }
         }
 
-        public void GameUpdate()
+        public void GameUpdate(TimeSpan span)
         {
             bot?.output.SendInput(Skill.Category.Jump);
         }

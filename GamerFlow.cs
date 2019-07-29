@@ -78,7 +78,7 @@ namespace ConsoleApp1
                     gamer.input.ResetToLobby();
                 }
             }
-            gamer.botProxy.GameUpdate();
+            gamer.botProxy.GameUpdate(TimeSpan.FromMilliseconds(TaskAgent.Delay));
         }
         public static void FConnectToServer(GamerEntity gamer)
         {

@@ -12,11 +12,12 @@ using GameServer.Package;
 using GamingRoom.Gaming.Packet;
 using GamingRoom.Gaming.Room.GameLogic.DropSystem;
 using GamingRoom.Gaming.Room.GameLogic.GameEventSystem;
+using SlitherEvo.Synchronize;
 using SlitherGame.Controller;
 
 namespace ConsoleApp1
 {
-    public class GamerEntity : IDisposable , IPlayerIntput,IPlayerOutput
+    public class GamerEntity : IDisposable , IPlayerInput,IPlayerOutput
     {   
         private static readonly TaskAgent NetworkService = new TaskAgent();
         private static readonly TaskAgent Logic = new TaskAgent();
@@ -215,12 +216,12 @@ namespace ConsoleApp1
             _gamingHandler?.SendToServer(packet);
         }
 
-        public void Rebirth(int type)
+        public void Rebirth(ERebirth type)
         {
             var packet = new Dictionary<byte, object>()
             {
                 {0, ClientGameCode.Rebirth },
-                {1, type },
+                {1, (int)type },
             };
             _gamingHandler?.SendToServer(packet);
         }
