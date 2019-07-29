@@ -1,0 +1,111 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "SlitherAIBase/1.0.0.2": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "12.0.2",
+          "RestSharp": "106.6.10",
+          "ftserver-client": "0.0.2.11",
+          "prometheus-net": "3.1.4"
+        },
+        "runtime": {
+          "SlitherAIBase.dll": {}
+        }
+      },
+      "ftserver-client/0.0.2.11": {
+        "runtime": {
+          "lib/netstandard2.0/dotnet.dll": {
+            "assemblyVersion": "0.0.2.11",
+            "fileVersion": "0.0.2.11"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.2.23222"
+          }
+        }
+      },
+      "prometheus-net/3.1.4": {
+        "runtime": {
+          "lib/netstandard2.0/Prometheus.NetStandard.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.1.4.0"
+          }
+        }
+      },
+      "RestSharp/106.6.10": {
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {
+            "assemblyVersion": "106.6.10.0",
+            "fileVersion": "106.6.10.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SlitherAIBase/1.0.0.2": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ftserver-client/0.0.2.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wbLfCbf7XY6JZwh17xxvywgN7umrOYPIZDIypdrTDW1u8RaIxX5NEAmn3pvWD/52uQaGYFjRRuSESGayFcGLVw==",
+      "path": "ftserver-client/0.0.2.11",
+      "hashPath": "ftserver-client.0.0.2.11.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "path": "newtonsoft.json/12.0.2",
+      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+    },
+    "prometheus-net/3.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vsXNMZiNC/fjJ7S6DriPfel3KOlwGvNCxf/udP/E8XyHpLDu76GJqGuuyU1y8qcDHWOmFQYvmpNBOjA6QnUdqw==",
+      "path": "prometheus-net/3.1.4",
+      "hashPath": "prometheus-net.3.1.4.nupkg.sha512"
+    },
+    "RestSharp/106.6.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MMLyolW6zkWNmEvJrrpTRmNaDRm6/KJBceb15U9uD6ZBEdySXNB3WCP/cWb8YmLUQoRhlIz9hbsnqfI6v3xKgQ==",
+      "path": "restsharp/106.6.10",
+      "hashPath": "restsharp.106.6.10.nupkg.sha512"
+    }
+  }
+}

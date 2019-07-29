@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Frank\.Rider2019.1\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\Frank\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Frank\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Bot" t="Include">
+        <e p="BotEvents.cs" t="Include" />
+        <e p="ConsoleBotProxy.cs" t="Include" />
+        <e p="IBotProxy.cs" t="Include" />
+        <e p="IPlayerIntput.cs" t="Include" />
+        <e p="IPlayerOutput.cs" t="Include" />
+      </e>
+      <e p="CallbackHandler" t="Include">
+        <e p="GamingHandler.cs" t="Include" />
+        <e p="LobbyHandler.cs" t="Include" />
+        <e p="MyCallBackHandler.cs" t="Include" />
+        <e p="PacketHandler.cs" t="Include" />
+      </e>
+      <e p="GamerEntity.cs" t="Include" />
+      <e p="GamerFlow.cs" t="Include" />
+      <e p="GamerInput.cs" t="Include" />
+      <e p="Init.cs" t="Include" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netstandard2.0" t="Include">
+            <e p="SlitherAIBase.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Packet" t="Include">
+        <e p="Direction.cs" t="Include" />
+        <e p="DropItemPacket.cs" t="Include" />
+        <e p="ECode.cs" t="Include" />
+        <e p="EnvironmentPacket.cs" t="Include" />
+        <e p="EOperationCode.cs" t="Include" />
+        <e p="ERebirth.cs" t="Include" />
+        <e p="ExMath" t="Include">
+          <e p="Coordinate" t="Include">
+            <e p="Vector2.cs" t="Include" />
+            <e p="Vector3.cs" t="Include" />
+          </e>
+          <e p="ExMath.cs" t="Include" />
+          <e p="Geometry" t="Include">
+            <e p="Cube.cs" t="Include" />
+            <e p="Sphere.cs" t="Include" />
+          </e>
+          <e p="Random" t="Include">
+            <e p="Random.cs" t="Include" />
+          </e>
+        </e>
+        <e p="GameEvent.cs" t="Include" />
+        <e p="GameResultPacket.cs" t="Include" />
+        <e p="GamersPacket.cs" t="Include" />
+        <e p="JoinRoomInput.cs" t="Include" />
+        <e p="Packet.cs" t="Include" />
+        <e p="QuickJoinInput.cs" t="Include" />
+        <e p="Response.cs" t="Include" />
+        <e p="RoomPacket.cs" t="Include" />
+        <e p="Skill.cs" t="Include" />
+        <e p="Value.cs" t="Include" />
+        <e p="WorldState.cs" t="Include" />
+      </e>
+      <e p="SlitherAIBase.csproj" t="IncludeRecursive" />
+      <e p="SlitherAIBase.deps.json" t="Include" />
+      <e p="TaskAgent.cs" t="Include" />
+      <e p="Tool" t="Include">
+        <e p="Account" t="Include">
+          <e p="Account.cs" t="Include" />
+          <e p="AccountBattle.cs" t="Include" />
+          <e p="AccountEvent.cs" t="Include" />
+          <e p="AccountInfo.cs" t="Include" />
+          <e p="AccountItems.cs" t="Include" />
+          <e p="AccountLogin.cs" t="Include" />
+          <e p="AccountMail.cs" t="Include" />
+          <e p="AccountMission.cs" t="Include" />
+          <e p="AccountOnSale.cs" t="Include" />
+          <e p="AccountPrestige.cs" t="Include" />
+          <e p="AccountSnake.cs" t="Include" />
+          <e p="AccountStatistics.cs" t="Include" />
+          <e p="Values.cs" t="Include" />
+        </e>
+        <e p="StringEncrypt.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>
