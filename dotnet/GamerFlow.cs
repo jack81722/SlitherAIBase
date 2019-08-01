@@ -63,11 +63,11 @@ namespace ConsoleApp1
             {
                 gamer._gamingHandler.SendToServer(new Dictionary<byte, object>
                 {
-                    {0, ClientGameCode.INITIALIZE}
+                    {0, ClientGameCode.ArenaSceneLoaded}
                 });
                 gamer._gamingHandler.SendToServer(new Dictionary<byte, object>
                 {
-                    {0, ClientGameCode.READY}
+                    {0, ClientGameCode.ArenaReady}
                 });
             }
 

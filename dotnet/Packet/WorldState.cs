@@ -62,7 +62,7 @@ namespace GamingServer.Gaming.Packet
         Die = 1,
         Jump = 2,
         Invisible = 4,
-        Invisible2 = 5,
+        //Invisible2 = 5,
         SpeedUp = 8,
         God = 16
     }

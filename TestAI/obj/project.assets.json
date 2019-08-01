@@ -1,0 +1,202 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "ftserver-client/0.0.2.11": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/dotnet.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "prometheus-net/3.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Prometheus.NetStandard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prometheus.NetStandard.dll": {}
+        }
+      },
+      "RestSharp/106.6.10": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        }
+      },
+      "SlitherAIBase/1.0.0.4": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "RestSharp": "106.6.10",
+          "ftserver-client": "0.0.2.11",
+          "prometheus-net": "3.1.4"
+        },
+        "compile": {
+          "bin/placeholder/SlitherAIBase.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SlitherAIBase.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ftserver-client/0.0.2.11": {
+      "sha512": "wbLfCbf7XY6JZwh17xxvywgN7umrOYPIZDIypdrTDW1u8RaIxX5NEAmn3pvWD/52uQaGYFjRRuSESGayFcGLVw==",
+      "type": "package",
+      "path": "ftserver-client/0.0.2.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ftserver-client.0.0.2.11.nupkg.sha512",
+        "ftserver-client.nuspec",
+        "lib/netstandard2.0/dotnet.dll"
+      ]
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
+    "prometheus-net/3.1.4": {
+      "sha512": "vsXNMZiNC/fjJ7S6DriPfel3KOlwGvNCxf/udP/E8XyHpLDu76GJqGuuyU1y8qcDHWOmFQYvmpNBOjA6QnUdqw==",
+      "type": "package",
+      "path": "prometheus-net/3.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Prometheus.NetStandard.deps.json",
+        "lib/netstandard2.0/Prometheus.NetStandard.dll",
+        "lib/netstandard2.0/Prometheus.NetStandard.pdb",
+        "lib/netstandard2.0/Prometheus.NetStandard.xml",
+        "prometheus-net.3.1.4.nupkg.sha512",
+        "prometheus-net.nuspec"
+      ]
+    },
+    "RestSharp/106.6.10": {
+      "sha512": "MMLyolW6zkWNmEvJrrpTRmNaDRm6/KJBceb15U9uD6ZBEdySXNB3WCP/cWb8YmLUQoRhlIz9hbsnqfI6v3xKgQ==",
+      "type": "package",
+      "path": "restsharp/106.6.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.106.6.10.nupkg.sha512",
+        "restsharp.nuspec"
+      ]
+    },
+    "SlitherAIBase/1.0.0.4": {
+      "type": "project",
+      "path": "../dotnet/SlitherAIBase.csproj",
+      "msbuildProject": "../dotnet/SlitherAIBase.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.0": [
+      "SlitherAIBase >= 1.0.0.4"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Frank\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Frank\\Desktop\\新增資料夾 (3)\\SlitherAIBase\\TestAI\\TestAI.csproj",
+      "projectName": "TestAI",
+      "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (3)\\SlitherAIBase\\TestAI\\TestAI.csproj",
+      "packagesPath": "C:\\Users\\Frank\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (3)\\SlitherAIBase\\TestAI\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Frank\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Frank\\Desktop\\g": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "projectReferences": {
+            "C:\\Users\\Frank\\Desktop\\新增資料夾 (3)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {
+              "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (3)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.0": {
+        "imports": [
+          "net461"
+        ],
+        "assetTargetFallback": true,
+        "warn": true
+      }
+    }
+  }
+}
