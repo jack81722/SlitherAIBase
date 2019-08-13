@@ -71,16 +71,33 @@
     <Compile Include="Assets\AIBase\CallbackHandler\LobbyHandler.cs" />
     <Compile Include="Assets\AIBase\CallbackHandler\MyCallBackHandler.cs" />
     <Compile Include="Assets\AIBase\CallbackHandler\PacketHandler.cs" />
+    <Compile Include="Assets\AIBase\CallbackHandler\ToArenaHandler.cs" />
     <Compile Include="Assets\AIBase\GamerEntity.cs" />
     <Compile Include="Assets\AIBase\GamerFlow.cs" />
     <Compile Include="Assets\AIBase\GamerInput.cs" />
     <Compile Include="Assets\AIBase\Init.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\Account.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountBattle.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountEvent.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountInfo.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountItems.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountLogin.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountMail.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountMission.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountOnSale.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountPrestige.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountSnake.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\AccountStatistics.cs" />
+    <Compile Include="Assets\AIBase\Packet\Account\Values.cs" />
     <Compile Include="Assets\AIBase\Packet\Direction.cs" />
     <Compile Include="Assets\AIBase\Packet\DropItemPacket.cs" />
+    <Compile Include="Assets\AIBase\Packet\EClientToArenaCode.cs" />
     <Compile Include="Assets\AIBase\Packet\ECode.cs" />
+    <Compile Include="Assets\AIBase\Packet\EnterArenaPacket.cs" />
     <Compile Include="Assets\AIBase\Packet\EnvironmentPacket.cs" />
     <Compile Include="Assets\AIBase\Packet\EOperationCode.cs" />
     <Compile Include="Assets\AIBase\Packet\ERebirth.cs" />
+    <Compile Include="Assets\AIBase\Packet\EServerToArenaCode.cs" />
     <Compile Include="Assets\AIBase\Packet\ExMath\Coordinate\Vector2.cs" />
     <Compile Include="Assets\AIBase\Packet\ExMath\Coordinate\Vector3.cs" />
     <Compile Include="Assets\AIBase\Packet\ExMath\ExMath.cs" />
@@ -99,19 +116,6 @@
     <Compile Include="Assets\AIBase\Packet\Value.cs" />
     <Compile Include="Assets\AIBase\Packet\WorldState.cs" />
     <Compile Include="Assets\AIBase\TaskAgent.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\Account.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountBattle.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountEvent.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountInfo.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountItems.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountLogin.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountMail.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountMission.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountOnSale.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountPrestige.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountSnake.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\AccountStatistics.cs" />
-    <Compile Include="Assets\AIBase\Tool\Account\Values.cs" />
     <Compile Include="Assets\AIBase\Tool\StringEncrypt.cs" />
     <Compile Include="Assets\Demo\script\Demo1.cs" />
     <Compile Include="Assets\F.T\FileServer\Script\File.cs" />
@@ -1223,25 +1227,25 @@
     <None Include="Assets\F.T\SocketServer\Lib\Core\Network\Dependencies\Best HTTP (Pro)\license.txt" />
     <None Include="Assets\F.T\SocketServer\Lib\Core\Network\Dependencies\Best HTTP (Pro)\link.xml" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -1427,16 +1431,16 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.8f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (3)/SlitherAIBase/Unity/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/Frank/Desktop/新增資料夾 (4)/SlitherAIBase/Unity/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.8f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

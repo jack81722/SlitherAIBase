@@ -19,8 +19,8 @@ namespace ConsoleApp1
         {
             NotConnect, ConnectedNotRegister, WaitingRoomList, WaitingJoinRoom, WaitingPeers,
             WaitEnterGaming,
-            WaitSendInitReady,
-            WaitSendReady,
+            WaitSendLoading,
+            WaitDeletePlayer,
             WaitWorldState,
             Gaming,
         }

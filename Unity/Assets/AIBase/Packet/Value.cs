@@ -44,8 +44,8 @@ namespace GameServer
         public const byte Rebirth = 12;
         public const byte SKILL = 14;      // 技能設定
         public const byte Item = 15;      // 道具使用
-        public const byte INITIALIZE = 20;
-        public const byte READY = 21;
+        public const byte ArenaSceneLoaded = 20;
+        public const byte ArenaReady = 21;
         public const byte Leave = 22;
 
         public const byte Broadcast = 71;

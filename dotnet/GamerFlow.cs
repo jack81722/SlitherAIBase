@@ -8,6 +8,7 @@ using GamingRoom.Gaming.Room.GameLogic.DropSystem;
 using GamingRoom.Gaming.Room.GameLogic.GameEventSystem;
 using GamingServer.Gaming.Packet;
 using SlitherEvo;
+using GameServer.Packet;
 
 namespace ConsoleApp1
 {
@@ -59,26 +60,14 @@ namespace ConsoleApp1
                 }
             }
 
-            if (gamer.input.Now == GamerInput.Level.WaitSendInitReady)
-            {
-                gamer._gamingHandler.SendToServer(new Dictionary<byte, object>
-                {
-                    {0, ClientGameCode.ArenaSceneLoaded}
-                });
-                gamer._gamingHandler.SendToServer(new Dictionary<byte, object>
-                {
-                    {0, ClientGameCode.ArenaReady}
-                });
-            }
-
             if (gamer.input.Now == GamerInput.Level.Gaming)
             {
+                gamer.botProxy.GameUpdate(TimeSpan.FromMilliseconds(TaskAgent.Delay));
                 if (gamer.input.IsOverGame)
                 {
                     gamer.input.ResetToLobby();
                 }
-            }
-            gamer.botProxy.GameUpdate(TimeSpan.FromMilliseconds(TaskAgent.Delay));
+            }           
         }
         public static void FConnectToServer(GamerEntity gamer)
         {
@@ -110,12 +99,30 @@ namespace ConsoleApp1
                 case EServerLobbyCode.RoomReady:
                     //LogProxy.WriteLine($"ServerLobbyCode.RoomReady({gamer.account.Info.Name})");
                     break;
-                case EServerLobbyCode.ToArena:
-                    //Console.WriteLine($"ServerLobbyCode.TO_GAMING({gamer.account.Info.Name})");
-                    FLobbyToGaming(gamer);
-                    break;
+                //case EServerLobbyCode.ToArena:
+                //    //Console.WriteLine($"ServerLobbyCode.TO_GAMING({gamer.account.Info.Name})");
+                //    FLobbyToGaming(gamer);
+                //    break;
             }
         }
+
+        public static void FReceiveToArena(GamerEntity gamer, EnterArenaPacket packet)
+        {
+            if (gamer.input.Now == GamerInput.Level.WaitEnterGaming)
+            {
+                gamer.input.SetLevel(GamerInput.Level.WaitSendLoading);
+                gamer._toArenaHandler.SendLoading(100);
+                gamer.input.SetLevel(GamerInput.Level.WaitDeletePlayer);
+            }
+            gamer.botProxy.GameStart(gamer.account, (byte)gamer.input.SlotID, new BotEvents(gamer, gamer));
+        }
+
+        public static void FDeletePlayer(GamerEntity gamer, byte[] slots)
+        {
+            gamer._toArenaHandler.SendReady();
+            gamer.input.SetLevel(GamerInput.Level.WaitWorldState);
+        }
+
 
         public static void FReceiveGamePacket(GamerEntity gamer,Dictionary<byte,object> packet,out SimWorld world)
         {
@@ -140,20 +147,6 @@ namespace ConsoleApp1
                         break;
                     //遊戲訊息
                     case EServerGameCode.GamerInfo:
-                        //LogProxy.WriteLine($"EServerGameCode.GamerInfo({gamer.account.Info.Name})");
-//                        var gamersPacket = (GamersPacket)packet[(byte)EServerGameCode.GamerInfo];
-//                        //auto rebrith
-//                        for (int i = 0; i < gamersPacket.Gamers.Length; i++)
-//                        {
-//                            if (gamersPacket.Gamers[i].PlayerSlot == gamer.input.SlotID && gamersPacket.Gamers[i].State == EGamerState.Die)
-//                            {
-//                                gamer._gamingHandler.SendToServer(new Dictionary<byte, object>()
-//                                {
-//                                    {0, ClientGameCode.Rebirth },
-//                                    {1, 0 }
-//                                });
-//                            }
-//                        }
                         break;
                     //遊戲結果
                     case EServerGameCode.GameResult:
@@ -319,15 +312,6 @@ namespace ConsoleApp1
                 gamer.input.SetLevel(GamerInput.Level.WaitEnterGaming);
             }
             //LogProxy.WriteLine($"FReceiveLobbyInfo({gamer.account.Info.Name})");
-        }
-        private static void FLobbyToGaming(GamerEntity gamer)
-        {
-            if (gamer.input.Now == GamerInput.Level.WaitEnterGaming)
-            {
-                gamer.input.SetLevel(GamerInput.Level.WaitSendInitReady);
-            }
-            gamer.botProxy.GameStart(gamer.account,(byte)gamer.input.SlotID,new BotEvents(gamer,gamer));
-            //LogProxy.WriteLine($"FLobbyToGaming({gamer.account.Info.Name})");
         }
     }
 }

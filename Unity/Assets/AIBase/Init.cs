@@ -5,6 +5,7 @@ using ConsoleApp1.Tool;
 using FTServer;
 using FTServer.Example;
 using FTServer.Operator;
+using GameServer;
 using Newtonsoft.Json;
 using RestSharp;
 using SlitherEvo;
@@ -23,7 +24,7 @@ namespace ConsoleApp1
             return Tuple.Create(urls, accessToken, account);
         }
 
-        public static Tuple<Connect,_System,LobbyHandler,GamingHandler,PacketHandler,PacketHandler> Rudp(Uri gamingServerIp)
+        public static Tuple<Connect,_System,LobbyHandler, ToArenaHandler, GamingHandler,PacketHandler,PacketHandler> Rudp(Uri gamingServerIp)
         {
             Connect connect = new Connect(gamingServerIp.Host,gamingServerIp.Port,NetworkProtocol.RUDP);
             
@@ -35,7 +36,10 @@ namespace ConsoleApp1
 
             var lobby = new LobbyHandler();
             connect.AddCallBackHandler(LobbyHandler.OperationCode, lobby);
-            
+
+            var toArena = new ToArenaHandler();
+            connect.AddCallBackHandler((byte)EOperationCode.ToArena, toArena);
+
             var gamePacketHandler  = new PacketHandler(PacketHandler.GamePacketOperationCode);
             connect.AddCallBackHandler(PacketHandler.GamePacketOperationCode, gamePacketHandler);
             
@@ -46,7 +50,7 @@ namespace ConsoleApp1
             system.Connect += () => { Console.WriteLine("Connect to server.");
             };
 
-            return Tuple.Create(connect,system,lobby,gaming,gamePacketHandler,gameRoomHandler);
+            return Tuple.Create(connect,system,lobby, toArena, gaming,gamePacketHandler,gameRoomHandler);
         }
 
 
@@ -60,7 +64,7 @@ namespace ConsoleApp1
             var request = new RestRequest("QueryIP");
 
             request.AddParameter("Json", input, ParameterType.QueryString);
-            var response = client.Post(request); 
+            var response = client.Post(request);
             var content = response.Content;
 
             return JsonConvert.DeserializeObject<Urls>(content);

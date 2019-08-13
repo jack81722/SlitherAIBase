@@ -6,7 +6,7 @@ namespace TestAI
 {
     class Program
     {
-        private const string agentServerIP = "http://192.168.2.5:30001"; //slither dev
+        private const string agentServerIP = "http://35.187.146.144:30001/"; //slither dev  http://192.168.2.5:30001
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using GameServer.Package;
+using GameServer.Packet;
 using GamingRoom.Gaming.Packet;
 using GamingRoom.Gaming.Room.GameLogic.DropSystem;
 using GamingRoom.Gaming.Room.GameLogic.GameEventSystem;
@@ -23,6 +24,9 @@ namespace GameServer
         event Action<byte[]> onReceiveRMGamer;
         event Action<int> onReceiveCountDown;
         event Action<float> onReceiveGameTime;
+        event Action<EnterArenaPacket> onReceiveEnterArena;
+        event Action<byte[]> onDeleteArenaPlayers;
+        event Action onToArenaStartGame;
     }
 
     public class SimWorld

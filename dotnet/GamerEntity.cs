@@ -14,6 +14,7 @@ using GamingRoom.Gaming.Room.GameLogic.DropSystem;
 using GamingRoom.Gaming.Room.GameLogic.GameEventSystem;
 using SlitherEvo.Synchronize;
 using SlitherGame.Controller;
+using GameServer.Packet;
 
 namespace ConsoleApp1
 {
@@ -35,6 +36,7 @@ namespace ConsoleApp1
         public _System _systemHandler { get; private set; }
         public GamingHandler _gamingHandler { get; private set; }
         public LobbyHandler _lobbyHandler { get; private set; }
+        public ToArenaHandler _toArenaHandler { get; private set; }
         public PacketHandler _gamePacketHandler { get; private set; }
         public PacketHandler _gameRoomHandler { get; private set; }
 
@@ -74,13 +76,18 @@ namespace ConsoleApp1
             _Connect = initGameResult.Item1;
             _systemHandler = initGameResult.Item2;
             _lobbyHandler = initGameResult.Item3;
-            _gamingHandler = initGameResult.Item4;
-            _gamePacketHandler = initGameResult.Item5;
-            _gameRoomHandler = initGameResult.Item6;
+            _toArenaHandler = initGameResult.Item4;
+            _gamingHandler = initGameResult.Item5;
+            _gamePacketHandler = initGameResult.Item6;
+            _gameRoomHandler = initGameResult.Item7;         
             _systemHandler.ConnectToServer();
             _systemHandler.Connect += ConnectedToServer;
             _lobbyHandler.RecvPacket += ReceiveLobbyPacket;
+            _toArenaHandler.SetCallBack(this);
             _gamePacketHandler.Receive = ReceiveGamePacket;
+
+            this.onReceiveEnterArena += ReceiveToArena;
+            this.onDeleteArenaPlayers += ReceiveDeletePlayer;
 
             NetworkService.RegisteredToNetworkTask(_Connect.Service);
             Logic.RegisteredToNetworkTask(Update);
@@ -98,6 +105,15 @@ namespace ConsoleApp1
         private void ReceiveGamePacket(Dictionary<byte, object> obj)
         {
             GamerFlow.FReceiveGamePacket(this, obj,out World);
+        }
+
+        private void ReceiveToArena(EnterArenaPacket packet)
+        {
+            GamerFlow.FReceiveToArena(this, packet);
+        }
+        private void ReceiveDeletePlayer(byte[] slots)
+        {
+            GamerFlow.FDeletePlayer(this, slots);
         }
 
         private void Update()
@@ -195,6 +211,25 @@ namespace ConsoleApp1
         {
             onReceiveGameTime?.Invoke(r);
         }
+
+        public event Action<EnterArenaPacket> onReceiveEnterArena;
+        public void fireReceiveEnterArena(EnterArenaPacket r)
+        {
+            onReceiveEnterArena?.Invoke(r);
+        }
+
+        public event Action<byte[]> onDeleteArenaPlayers;
+        public void fireDeleteArenaPlayers(byte[] slots)
+        {
+            onDeleteArenaPlayers?.Invoke(slots);
+        }
+
+        public event Action onToArenaStartGame;
+        public void fireStartGame()
+        {
+            onToArenaStartGame?.Invoke();
+        }
+
         public void SendInput(float angle)
         {
             var direction = Direction.GetD32(angle);

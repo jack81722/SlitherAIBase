@@ -3,7 +3,6 @@ using FTServer.Projects.Slither.Packet;
 using GamingRoom.Gaming.Packet;
 using GamingServer.Gaming.Packet;
 using SlitherEvo;
-using UnityEngine;
 
 namespace GameServer
 {
@@ -24,7 +23,6 @@ namespace GameServer
         private void InputOnOnReceiveGamerInfo(GamersPacket gamersPacket)
         {
             //auto rebrith
-            Debug.Log("GamerInfo");
             for (int i = 0; i < gamersPacket.Gamers.Length; i++)
             {
                 if (gamersPacket.Gamers[i].PlayerSlot == slotId &&

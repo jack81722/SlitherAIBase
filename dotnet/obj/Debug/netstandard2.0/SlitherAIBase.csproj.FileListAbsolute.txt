@@ -25,3 +25,12 @@ C:\Users\Frank\Desktop\新增資料夾 (3)\SlitherAIBase\dotnet\obj\Debug\netsta
 C:\Users\Frank\Desktop\新增資料夾 (3)\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.AssemblyInfo.cs
 C:\Users\Frank\Desktop\新增資料夾 (3)\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.dll
 C:\Users\Frank\Desktop\新增資料夾 (3)\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.pdb
+C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase\dotnet\bin\Debug\netstandard2.0\SlitherAIBase.deps.json
+C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase\dotnet\bin\Debug\netstandard2.0\SlitherAIBase.dll
+C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase\dotnet\bin\Debug\netstandard2.0\SlitherAIBase.pdb
+C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.csprojAssemblyReference.cache
+C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.csproj.CoreCompileInputs.cache
+C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.AssemblyInfoInputs.cache
+C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.AssemblyInfo.cs
+C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.dll
+C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.pdb
