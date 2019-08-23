@@ -17,6 +17,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\Frank\Desktop\新增資料夾 (4)\SlitherAIBase\dotnet\bin\Debug\netstandard2.0\SlitherAIBase.dll" target="lib\netstandard2.0\SlitherAIBase.dll" />
+    <file src="C:\Users\Frank\Desktop\新增資料夾 (13)\SlitherAIBase\dotnet\bin\Debug\netstandard2.0\SlitherAIBase.dll" target="lib\netstandard2.0\SlitherAIBase.dll" />
   </files>
 </package>

@@ -297,11 +297,11 @@
   "project": {
     "version": "1.0.0.4",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
+      "projectUniqueName": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
       "projectName": "SlitherAIBase",
-      "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
+      "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
       "packagesPath": "C:\\Users\\Frank\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\dotnet\\obj\\",
+      "outputPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

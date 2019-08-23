@@ -12,6 +12,9 @@ namespace GameServer
         private Account account;
         private BotEvents bot;
 
+        private double maxTime = 1000;
+        private double time = 0;
+
         public void GameStart(Account account,byte slotId,BotEvents bot)
         {
             this.account = account;
@@ -35,7 +38,12 @@ namespace GameServer
 
         public void GameUpdate(TimeSpan span)
         {
-            bot?.output.SendInput(Skill.Category.Jump);
+            time += span.TotalMilliseconds;
+            if (time > maxTime)
+            {
+                bot?.output.SendInput(Skill.Category.Jump);
+                time = 0;
+            }
         }
     }
 }

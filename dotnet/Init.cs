@@ -23,7 +23,6 @@ namespace ConsoleApp1
             var account = Login(urls, accessToken);
             return Tuple.Create(urls, accessToken, account);
         }
-
         public static Tuple<Connect,_System,LobbyHandler, ToArenaHandler, GamingHandler,PacketHandler,PacketHandler> Rudp(Uri gamingServerIp)
         {
             Connect connect = new Connect(gamingServerIp.Host,gamingServerIp.Port,NetworkProtocol.RUDP);
@@ -52,11 +51,9 @@ namespace ConsoleApp1
 
             return Tuple.Create(connect,system,lobby, toArena, gaming,gamePacketHandler,gameRoomHandler);
         }
-
-
         private static Urls QueryIP(string agentServerIP)
         {
-            var input = JsonConvert.SerializeObject(new {ClientVersion = "1.7.2", LoginType = "beta"});
+            var input = JsonConvert.SerializeObject(new {ClientVersion = "1.9.1", LoginType = "beta"});
             input = StringEncrypt.Encrypt(input, userKey);
 
             Uri agentServer = new Uri(agentServerIP);

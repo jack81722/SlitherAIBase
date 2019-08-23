@@ -19,7 +19,7 @@ namespace GamingRoom.Gaming.Packet
     public class GamerPacket
     {
         public byte PlayerSlot;
-         public byte SkinID;
+         public int SkinID;
          public EGamerState State;
         public Vector3 HeadPos;
          public byte KillerID;

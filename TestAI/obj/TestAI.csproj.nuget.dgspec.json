@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\TestAI\\TestAI.csproj": {}
+    "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\TestAI\\TestAI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {
+    "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {
       "version": "1.0.0.4",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
+        "projectUniqueName": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
         "projectName": "SlitherAIBase",
-        "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
+        "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
         "packagesPath": "C:\\Users\\Frank\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\dotnet\\obj\\",
+        "outputPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -79,14 +79,14 @@
         }
       }
     },
-    "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\TestAI\\TestAI.csproj": {
+    "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\TestAI\\TestAI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\TestAI\\TestAI.csproj",
+        "projectUniqueName": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\TestAI\\TestAI.csproj",
         "projectName": "TestAI",
-        "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\TestAI\\TestAI.csproj",
+        "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\TestAI\\TestAI.csproj",
         "packagesPath": "C:\\Users\\Frank\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\TestAI\\obj\\",
+        "outputPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\TestAI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -112,8 +112,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {
-                "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (4)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj"
+              "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {
+                "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj"
               }
             }
           }
