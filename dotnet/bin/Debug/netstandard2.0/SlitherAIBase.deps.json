@@ -68,7 +68,7 @@
     "ftserver-client/0.0.2.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wbLfCbf7XY6JZwh17xxvywgN7umrOYPIZDIypdrTDW1u8RaIxX5NEAmn3pvWD/52uQaGYFjRRuSESGayFcGLVw==",
+      "sha512": "sha512-XYSsYIzw1JiG2KJwXF+mTlrCdwZohH++cOCw+NC1nritgcHF2tjl2H3CG+6PfF2ZsJgEciGCo3znyKkS8FE5QQ==",
       "path": "ftserver-client/0.0.2.11",
       "hashPath": "ftserver-client.0.0.2.11.nupkg.sha512"
     },
@@ -103,7 +103,7 @@
     "RestSharp/106.6.10": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MMLyolW6zkWNmEvJrrpTRmNaDRm6/KJBceb15U9uD6ZBEdySXNB3WCP/cWb8YmLUQoRhlIz9hbsnqfI6v3xKgQ==",
+      "sha512": "sha512-x1FM32hjnVOIn+DKtCs2Y4Q2DCUE5KW08NUXUd4GjgKjE+5PE0F6e9XfUg7nILo05M0TA/HRkRD/SeQ8+duOUA==",
       "path": "restsharp/106.6.10",
       "hashPath": "restsharp.106.6.10.nupkg.sha512"
     }

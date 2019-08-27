@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {}
+    "D:\\download\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {
+    "D:\\download\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {
       "version": "1.0.0.4",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
+        "projectUniqueName": "D:\\download\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
         "projectName": "SlitherAIBase",
-        "projectPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
-        "packagesPath": "C:\\Users\\Frank\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Frank\\Desktop\\新增資料夾 (13)\\SlitherAIBase\\dotnet\\obj\\",
+        "projectPath": "D:\\download\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\download\\SlitherAIBase\\dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Frank\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,14 +25,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\Frank\\Desktop\\g": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
-          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
+          "C:\\Users\\User\\.dotnet\\NuGetFallbackFolder": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -72,7 +66,12 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true
