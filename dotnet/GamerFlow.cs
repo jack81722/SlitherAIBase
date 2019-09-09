@@ -19,24 +19,16 @@ namespace ConsoleApp1
             gamer.input.CheckStayTime();
             if (gamer.input.IsError)
             {
-                //Console.WriteLine("IsError");
-                //gamer.Dispose();
+                Console.WriteLine("Gamer 在單一狀態停留超過最大時間，判斷為是有問題的 AI");
+                gamer.Dispose();
                 return;
-            }
-            
-            if (gamer.input.Now == GamerInput.Level.NotConnect)
+            }          
+
+            if (gamer.input.TrySetNextLevel(GamerInput.Level.ConnectedNotRegister))
             {
-
+                gamer._lobbyHandler.SendToServer(EClientLobbyCode.Register, gamer.account.Info.Name);
             }
-
-            if (gamer.input.Now == GamerInput.Level.ConnectedNotRegister)
-            {
-                //註冊
-                gamer._lobbyHandler.SendToServer(EClientLobbyCode.Register,gamer.account.Info.Name);
-                gamer.input.SetLevel(GamerInput.Level.WaitingRoomList);
-            }
-
-            if (gamer.input.Now == GamerInput.Level.WaitingJoinRoom)
+            if (gamer.input.TrySetNextLevel(GamerInput.Level.WaitingJoinRoom))
             {
                 var input = new QuickJoinInput
                 {
@@ -46,12 +38,9 @@ namespace ConsoleApp1
                     Name = gamer.account.Info.Name,
                     SkinID = gamer.account.Snake.Skin.EquipID
                 };
-                gamer._lobbyHandler.SendToServer(EClientLobbyCode.QuickJoin,input);
-                gamer.input.SetLevel(GamerInput.Level.WaitingPeers);
-                //LogProxy.WriteLine($"QuickJoin({gamer.account.Info.Name})");
+                gamer._lobbyHandler.SendToServer(EClientLobbyCode.QuickJoin, input);
             }
-
-            if (gamer.input.Now == GamerInput.Level.WaitEnterGaming)
+            if (gamer.input.TrySetNextLevel(GamerInput.Level.WaitEnterGaming))
             {
                 if (!gamer.input.LobbyReady)
                 {
@@ -67,15 +56,11 @@ namespace ConsoleApp1
                 {
                     gamer.input.ResetToLobby();
                 }
-            }           
+            }
         }
         public static void FConnectToServer(GamerEntity gamer)
         {
-            if (gamer.input.Now == GamerInput.Level.NotConnect)
-            {
-                gamer.input.SetLevel(GamerInput.Level.ConnectedNotRegister);
-            }
-            //LogProxy.WriteLine($"ConnectToServer({gamer.account.Info.Name})");
+            gamer.input.TrySetNextLevel(GamerInput.Level.NotConnect);
         }
 
         public static void FReceiveLobbyPacket(GamerEntity gamer, Dictionary<byte, object> packet)
@@ -89,38 +74,69 @@ namespace ConsoleApp1
             switch (code)
             {
                 case EServerLobbyCode.Rooms:
-                    //LogProxy.WriteLine($"ServerLobbyCode.Rooms({gamer.account.Info.Name})");
-                    FReceiveLobbyList(gamer,packet);
+                    onGetRoomList();
                     break;
                 case EServerLobbyCode.AllPeers:
-                    //LogProxy.WriteLine($"ServerLobbyCode.AllPeers({gamer.account.Info.Name})");
-                    FReceiveLobbyInfo(gamer,packet);
+                    onGetAllRoommates();
                     break;
                 case EServerLobbyCode.RoomReady:
-                    //LogProxy.WriteLine($"ServerLobbyCode.RoomReady({gamer.account.Info.Name})");
+                    onRoommateReady();
                     break;
-                //case EServerLobbyCode.ToArena:
-                //    //Console.WriteLine($"ServerLobbyCode.TO_GAMING({gamer.account.Info.Name})");
-                //    FLobbyToGaming(gamer);
-                //    break;
+            }
+
+            void onGetRoomList()
+            {
+                var webRoomPacket = (RoomPacket[])packet[1];
+                int waitingRoomCount = int.Parse(packet[2].ToString());
+                int battleRoomCount = int.Parse(packet[3].ToString());
+
+                gamer.input.SetLevel();
+            }
+            void onGetAllRoommates()
+            {
+                var playerPackets = (PlayerPacket[])packet[1];
+                int comeDown = int.Parse(packet[2].ToString());
+                var roomID = packet[3].ToString();
+                gamer.mPlayerNameList.Clear();
+
+                for (int i = 0; i < playerPackets.Length; i++)
+                {
+                    if (playerPackets[i].SlotID == -1)
+                        continue;
+                    gamer.mPlayerNameList.Add(playerPackets[i].SlotID, playerPackets[i].Name);
+                    if (playerPackets[i].Name == gamer.account.Info.Name)
+                    {
+                        gamer.input.SlotID = playerPackets[i].SlotID;
+                    }
+                }
+                gamer.input.TrySetNextLevel(GamerInput.Level.WaitingPeers);
+            }
+            void onRoommateReady()
+            {
+                //當 有玩家按 Ready 時觸發
             }
         }
 
         public static void FReceiveToArena(GamerEntity gamer, EnterArenaPacket packet)
         {
-            if (gamer.input.Now == GamerInput.Level.WaitEnterGaming)
+            if (gamer.input.TrySetNextLevel(GamerInput.Level.WaitSendLoading))
             {
-                gamer.input.SetLevel(GamerInput.Level.WaitSendLoading);
-                gamer._toArenaHandler.SendLoading(100);
-                gamer.input.SetLevel(GamerInput.Level.WaitDeletePlayer);
+                gamer._toArenaHandler.SendLoading(100);            
             }
             gamer.botProxy.GameStart(gamer.account, (byte)gamer.input.SlotID, new BotEvents(gamer, gamer));
         }
 
         public static void FDeletePlayer(GamerEntity gamer, byte[] slots)
         {
-            gamer._toArenaHandler.SendReady();
-            gamer.input.SetLevel(GamerInput.Level.WaitWorldState);
+            if (gamer.input.TrySetNextLevel(GamerInput.Level.WaitDeletePlayer))
+            {
+                gamer._toArenaHandler.SendReady();
+            }
+            //if (gamer.input.Now == GamerInput.Level.WaitDeletePlayer)
+            //{
+            //    gamer._toArenaHandler.SendReady();
+            //    gamer.input.SetLevel(GamerInput.Level.WaitWorldState);
+            //}
         }
 
 
@@ -275,43 +291,6 @@ namespace ConsoleApp1
                 world.CountDown = PacketCountDown.Value;
             if (PacketGameTime!= null)
                 world.GameTime = PacketGameTime.Value;
-        }
-
-        private static void FReceiveLobbyList(GamerEntity gamer, Dictionary<byte, object> packet)
-        {
-            var webRoomPacket = (RoomPacket[])packet[1];
-            int waitingRoomCount = int.Parse(packet[2].ToString());
-            int battleRoomCount = int.Parse(packet[3].ToString());
-
-            if (gamer.input.Now == GamerInput.Level.WaitingRoomList)
-            {
-                gamer.input.SetLevel(GamerInput.Level.WaitingJoinRoom);
-            }
-            //LogProxy.WriteLine($"FReceiveLobbyList({gamer.account.Info.Name})");
-        }
-        private static void FReceiveLobbyInfo(GamerEntity gamer, Dictionary<byte, object> packet)
-        {
-            var playerPackets = (PlayerPacket[])packet[1];
-            int comeDown = int.Parse(packet[2].ToString());
-            var roomID = packet[3].ToString();
-            //LogProxy.WriteLine($"WaitingRoom CountDown({gamer.account.Info.Name}) : {comeDown}");
-            gamer.mPlayerNameList.Clear();
-
-            for (int i = 0; i < playerPackets.Length; i++)
-            {
-                if (playerPackets[i].SlotID == -1)
-                    continue;
-                gamer.mPlayerNameList.Add(playerPackets[i].SlotID, playerPackets[i].Name);
-                if (playerPackets[i].Name == gamer.account.Info.Name)
-                {
-                    gamer.input.SlotID = playerPackets[i].SlotID;
-                }
-            }
-            if (gamer.input.Now == GamerInput.Level.WaitingPeers)
-            {
-                gamer.input.SetLevel(GamerInput.Level.WaitEnterGaming);
-            }
-            //LogProxy.WriteLine($"FReceiveLobbyInfo({gamer.account.Info.Name})");
         }
     }
 }

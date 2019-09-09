@@ -101,12 +101,6 @@ namespace ConsoleApp1
         {
             GamerFlow.FReceiveLobbyPacket(this, packet);
         }
-
-        private void ReceiveGamePacket(Dictionary<byte, object> obj)
-        {
-            GamerFlow.FReceiveGamePacket(this, obj,out World);
-        }
-
         private void ReceiveToArena(EnterArenaPacket packet)
         {
             GamerFlow.FReceiveToArena(this, packet);
@@ -114,6 +108,10 @@ namespace ConsoleApp1
         private void ReceiveDeletePlayer(byte[] slots)
         {
             GamerFlow.FDeletePlayer(this, slots);
+        }
+        private void ReceiveGamePacket(Dictionary<byte, object> obj)
+        {
+            GamerFlow.FReceiveGamePacket(this, obj,out World);
         }
 
         private void Update()
@@ -129,11 +127,7 @@ namespace ConsoleApp1
             _IsDispose = true;
         }
 
-        public SimWorld GetWorld()
-        {
-            return World;
-        }
-
+        #region 實作 IPlayerInput , IPlayerOutput 介面
         public event Action<EnvironmentPacket> onReceiveEnvironment;
         public void fireReceiveEnvironment(EnvironmentPacket r)
         {
@@ -289,5 +283,6 @@ namespace ConsoleApp1
             };
             _gamingHandler?.SendToServer(packet);
         }
+        #endregion
     }
 }

@@ -147,11 +147,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\download\\SlitherAIBase\\TestAI\\TestAI.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\新增資料夾\\SlitherAIBase\\TestAI\\TestAI.csproj",
       "projectName": "TestAI",
-      "projectPath": "D:\\download\\SlitherAIBase\\TestAI\\TestAI.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\新增資料夾\\SlitherAIBase\\TestAI\\TestAI.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\download\\SlitherAIBase\\TestAI\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\新增資料夾\\SlitherAIBase\\TestAI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -171,8 +171,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "D:\\download\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {
-              "projectPath": "D:\\download\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj"
+            "C:\\Users\\User\\Desktop\\新增資料夾\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\新增資料夾\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj"
             }
           }
         }

@@ -12,12 +12,12 @@ namespace TestAI
 {
     class Program
     {
-        private const string agentServerIP = "http://34.80.230.34:30001/";
+        private const string agentServerIP = "http://35.229.179.186:30001/";
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             List<GamerEntity> gamers = new List<GamerEntity>();
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 1; i++)
             {
                 gamers.Add(StartAI(Guid.NewGuid().ToString()));
                 Console.WriteLine($"AI 蛇 : {i}");

@@ -50,6 +50,19 @@ namespace ConsoleApp1
             Now = level;
             _Stopwatch.Restart();
         }
+        public void SetLevel()
+        {
+            Now++;
+            _Stopwatch.Restart();
+        }
+
+        public bool TrySetNextLevel(Level nowLevel)
+        {
+            bool result = (Now == nowLevel);
+            if (result)
+                SetLevel();
+            return result;
+        }
 
         public void CheckStayTime()
         {

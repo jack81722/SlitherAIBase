@@ -41,9 +41,10 @@ namespace GameServer
             time += span.TotalMilliseconds;
             if (time > maxTime)
             {
-                bot?.output.SendInput(Skill.Category.Jump);
+                //bot?.output.SendInput(Skill.Category.Jump);
                 time = 0;
             }
+            Console.WriteLine("Update");
         }
     }
 }

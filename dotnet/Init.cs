@@ -53,7 +53,7 @@ namespace ConsoleApp1
         }
         private static Urls QueryIP(string agentServerIP)
         {
-            var input = JsonConvert.SerializeObject(new {ClientVersion = "1.9.1", LoginType = "beta"});
+            var input = JsonConvert.SerializeObject(new {ClientVersion = "1.9.2", LoginType = "dev"});
             input = StringEncrypt.Encrypt(input, userKey);
 
             Uri agentServer = new Uri(agentServerIP);
