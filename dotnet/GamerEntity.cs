@@ -52,6 +52,14 @@ namespace ConsoleApp1
             botProxy = new ConsoleBotProxy();
         }
 
+        public GamerEntity(string id, IBotProxy bot)
+        {
+            _devicedId = id;
+            input = new GamerInput();
+            mPlayerNameList = new Dictionary<int, string>();
+            botProxy = bot;
+        }
+
         ~GamerEntity()
         {
             if (_IsDispose) return;
@@ -59,15 +67,54 @@ namespace ConsoleApp1
             _IsDispose = true;
         }
 
-        public void Start(string agentServer, IBotProxy botProxy)
+        public void QueryGameUrl(string agentAddr, string serverVer, string serverType)
         {
-            this.botProxy = botProxy;
             //基本的 Http 初始流程
-            var initResult = Init.Http(agentServer, _devicedId);
+            var initResult = Init.Http(agentAddr, _devicedId, serverVer, serverType);
             urls = initResult.Item1;
             accessToken = initResult.Item2;
             account = initResult.Item3;
-            
+        }
+
+        public void Authenticate(string userAddr)
+        {
+            accessToken = Init.Authentication(userAddr, _devicedId);
+        }
+
+        public void Login(string userAddr)
+        {
+            account = Init.Login(userAddr, accessToken);
+        }
+
+        public void Start(string gameUrl)
+        {
+            //強連線流程
+            Uri gamingUrl = new Uri(gameUrl);
+
+            var initGameResult = Init.Rudp(gamingUrl);
+
+            _Connect = initGameResult.Item1;
+            _systemHandler = initGameResult.Item2;
+            _lobbyHandler = initGameResult.Item3;
+            _toArenaHandler = initGameResult.Item4;
+            _gamingHandler = initGameResult.Item5;
+            _gamePacketHandler = initGameResult.Item6;
+            _gameRoomHandler = initGameResult.Item7;
+            _systemHandler.ConnectToServer();
+            _systemHandler.Connect += ConnectedToServer;
+            _lobbyHandler.RecvPacket += ReceiveLobbyPacket;
+            _toArenaHandler.SetCallBack(this);
+            _gamePacketHandler.Receive = ReceiveGamePacket;
+
+            this.onReceiveEnterArena += ReceiveToArena;
+            this.onDeleteArenaPlayers += ReceiveDeletePlayer;
+
+            NetworkService.RegisteredToNetworkTask(_Connect.Service);
+            Logic.RegisteredToNetworkTask(Update);
+        }
+
+        public void Start()
+        {   
             //強連線流程
             Uri gamingUrl = new Uri(urls.GamingUrl);
 

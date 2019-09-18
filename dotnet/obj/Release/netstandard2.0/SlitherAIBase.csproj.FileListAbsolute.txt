@@ -1,0 +1,12 @@
+D:\Work Space\SlitherAIBase\dotnet\bin\Release\netstandard2.0\SlitherAIBase.deps.json
+D:\Work Space\SlitherAIBase\dotnet\bin\Release\netstandard2.0\SlitherAIBase.dll
+D:\Work Space\SlitherAIBase\dotnet\bin\Release\netstandard2.0\SlitherAIBase.pdb
+D:\Work Space\SlitherAIBase\dotnet\bin\Release\netstandard2.0\ExMath.dll
+D:\Work Space\SlitherAIBase\dotnet\bin\Release\netstandard2.0\ExMath.pdb
+D:\Work Space\SlitherAIBase\dotnet\obj\Release\netstandard2.0\SlitherAIBase.csprojAssemblyReference.cache
+D:\Work Space\SlitherAIBase\dotnet\obj\Release\netstandard2.0\SlitherAIBase.csproj.CoreCompileInputs.cache
+D:\Work Space\SlitherAIBase\dotnet\obj\Release\netstandard2.0\SlitherAIBase.AssemblyInfoInputs.cache
+D:\Work Space\SlitherAIBase\dotnet\obj\Release\netstandard2.0\SlitherAIBase.AssemblyInfo.cs
+D:\Work Space\SlitherAIBase\dotnet\obj\Release\netstandard2.0\SlitherAIBase.csproj.CopyComplete
+D:\Work Space\SlitherAIBase\dotnet\obj\Release\netstandard2.0\SlitherAIBase.dll
+D:\Work Space\SlitherAIBase\dotnet\obj\Release\netstandard2.0\SlitherAIBase.pdb

@@ -15,11 +15,17 @@ namespace ConsoleApp1
     public class Init
     {
         const string userKey = "0452DA61-B201-49A4-B403-37B0760FFBCB";
-        public static Tuple<Urls, string, Account> Http(string agentServerIP,string devicedId)
+
+        public static Urls QueryGameServerUrl(string agentServerIP, string version, string type)
+        {
+            return QueryIP(agentServerIP, version, type);
+        } 
+
+        public static Tuple<Urls, string, Account> Http(string agentServerIP, string devicedId, string version, string type)
         {
             Console.WriteLine($"devicedId: {devicedId}");
-            var urls = QueryIP(agentServerIP);
-            var accessToken = Authentication(urls,devicedId);
+            var urls = QueryIP(agentServerIP, version, type);
+            var accessToken = Authentication(urls, devicedId);
             var account = Login(urls, accessToken);
             return Tuple.Create(urls, accessToken, account);
         }
@@ -51,9 +57,9 @@ namespace ConsoleApp1
 
             return Tuple.Create(connect,system,lobby, toArena, gaming,gamePacketHandler,gameRoomHandler);
         }
-        private static Urls QueryIP(string agentServerIP)
+        private static Urls QueryIP(string agentServerIP, string clientVer, string loginType)
         {
-            var input = JsonConvert.SerializeObject(new {ClientVersion = "1.9.2", LoginType = "dev"});
+            var input = JsonConvert.SerializeObject(new {ClientVersion = clientVer, LoginType = loginType });
             input = StringEncrypt.Encrypt(input, userKey);
 
             Uri agentServer = new Uri(agentServerIP);
@@ -65,6 +71,23 @@ namespace ConsoleApp1
             var content = response.Content;
 
             return JsonConvert.DeserializeObject<Urls>(content);
+        }
+
+        public static string Authentication(string userUrl, string devicedId)
+        {
+            var client = new RestClient(userUrl);
+            var request = new RestRequest("Authentication");
+            var input = JsonConvert.SerializeObject(new { DeviceID = devicedId, SecretOpenID = "" });
+            input = StringEncrypt.Encrypt(input, userKey);
+            request.AddParameter("application/json", input, ParameterType.RequestBody);
+
+            var response = client.Post(request);
+            var content = StringEncrypt.Decrypt(response.Content, userKey);
+
+            var definition = new { Code = "", Msg = "", AccessToken = "" };
+            var result = JsonConvert.DeserializeAnonymousType(content, definition);
+
+            return result.AccessToken;
         }
 
         private static string Authentication(Urls url,string devicedId)
@@ -84,12 +107,27 @@ namespace ConsoleApp1
             return result.AccessToken;
         }
 
+        public static Account Login(string userUrl, string accessToken)
+        {
+            var client = new RestClient(userUrl);
+            var request = new RestRequest("Login");
+            request.AddParameter("Authorization", accessToken, ParameterType.HttpHeader);
+            var input = StringEncrypt.Encrypt(JsonConvert.SerializeObject(new { Language = "Taiwan" }), userKey);
+            request.AddParameter("application/json", input, ParameterType.RequestBody);
+            var response = client.Post(request);
+            var content = StringEncrypt.Decrypt(response.Content, userKey);
+            var definition = new { Code = "", Msg = "", Account = new SlitherEvo.Account() };
+
+            return JsonConvert.DeserializeAnonymousType(content, definition).Account;
+        }
 
         public static Account Login(Urls urls, string accessToken)
         {
             var client = new RestClient(urls.UserUrl);
             var request = new RestRequest("Login");
             request.AddParameter("Authorization", accessToken, ParameterType.HttpHeader);
+            var input = StringEncrypt.Encrypt(JsonConvert.SerializeObject(new { Language = "Taiwan" }), userKey);
+            request.AddParameter("application/json", input, ParameterType.RequestBody);
             var response = client.Post(request);
             var content = StringEncrypt.Decrypt(response.Content, userKey);
             var definition = new {Code = "", Msg = "", Account = new SlitherEvo.Account()};
