@@ -61,3 +61,15 @@ C:\Users\User\Desktop\新增資料夾\SlitherAIBase\dotnet\obj\Debug\netstandard
 C:\Users\User\Desktop\新增資料夾\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.AssemblyInfo.cs
 C:\Users\User\Desktop\新增資料夾\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.dll
 C:\Users\User\Desktop\新增資料夾\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.pdb
+D:\Work Space\SlitherAIBase\dotnet\bin\Debug\netstandard2.0\SlitherAIBase.deps.json
+D:\Work Space\SlitherAIBase\dotnet\bin\Debug\netstandard2.0\SlitherAIBase.dll
+D:\Work Space\SlitherAIBase\dotnet\bin\Debug\netstandard2.0\SlitherAIBase.pdb
+D:\Work Space\SlitherAIBase\dotnet\bin\Debug\netstandard2.0\ExMath.dll
+D:\Work Space\SlitherAIBase\dotnet\bin\Debug\netstandard2.0\ExMath.pdb
+D:\Work Space\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.csprojAssemblyReference.cache
+D:\Work Space\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.csproj.CoreCompileInputs.cache
+D:\Work Space\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.AssemblyInfoInputs.cache
+D:\Work Space\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.AssemblyInfo.cs
+D:\Work Space\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.csproj.CopyComplete
+D:\Work Space\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.dll
+D:\Work Space\SlitherAIBase\dotnet\obj\Debug\netstandard2.0\SlitherAIBase.pdb

@@ -61,6 +61,16 @@
         "runtime": {
           "lib/netstandard2.0/RestSharp.dll": {}
         }
+      },
+      "ExMath/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ExMath.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExMath.dll": {}
+        }
       }
     }
   },
@@ -78,12 +88,11 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "JbZPmv4LMOJgENxpgK58pxQI3/IM64K/zk5C2QxmDWAEi4QLZUb7xE4gZ4b1qHoN4pRt6yPIvGjsBEiajA7AMg==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -279,10 +288,16 @@
         "restsharp.106.6.10.nupkg.sha512",
         "restsharp.nuspec"
       ]
+    },
+    "ExMath/1.0.0": {
+      "type": "project",
+      "path": "../../ExMath/ExMath/ExMath.csproj",
+      "msbuildProject": "../../ExMath/ExMath/ExMath.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "ExMath >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.2",
       "RestSharp >= 106.6.10",
@@ -291,23 +306,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\Server\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0.4",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\新增資料夾\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
+      "projectUniqueName": "D:\\Work Space\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
       "projectName": "SlitherAIBase",
-      "projectPath": "C:\\Users\\User\\Desktop\\新增資料夾\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\新增資料夾\\SlitherAIBase\\dotnet\\obj\\",
+      "projectPath": "D:\\Work Space\\SlitherAIBase\\dotnet\\SlitherAIBase.csproj",
+      "packagesPath": "C:\\Users\\Server\\.nuget\\packages\\",
+      "outputPath": "D:\\Work Space\\SlitherAIBase\\dotnet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Server\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -315,12 +330,16 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\User\\.dotnet\\NuGetFallbackFolder": {},
+        "D:\\Work Space\\Visual Studio 2017\\NuGet Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Work Space\\ExMath\\ExMath\\ExMath.csproj": {
+              "projectPath": "D:\\Work Space\\ExMath\\ExMath\\ExMath.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -356,12 +375,7 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
         "warn": true

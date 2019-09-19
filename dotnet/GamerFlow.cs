@@ -30,15 +30,14 @@ namespace ConsoleApp1
             }
             if (gamer.input.TrySetNextLevel(GamerInput.Level.WaitingJoinRoom))
             {
-                var input = new QuickJoinInput
+                if (int.TryParse(Environment.GetEnvironmentVariable("RoomID"), out int roomId) && roomId >= 0)
                 {
-                    Price = 10,
-                    RoomType = (byte)EJoinRoomType.Standard,
-                    Token = gamer.accessToken,
-                    Name = gamer.account.Info.Name,
-                    SkinID = gamer.account.Snake.Skin.EquipID
-                };
-                gamer._lobbyHandler.SendToServer(EClientLobbyCode.QuickJoin, input);
+                    JoinRoom(gamer, roomId);
+                }
+                else
+                {
+                    QuickJoin(gamer);
+                }
             }
             if (gamer.input.TrySetNextLevel(GamerInput.Level.WaitEnterGaming))
             {
@@ -54,10 +53,39 @@ namespace ConsoleApp1
                 gamer.botProxy.GameUpdate(TimeSpan.FromMilliseconds(TaskAgent.Delay));
                 if (gamer.input.IsOverGame)
                 {
-                    gamer.input.ResetToLobby();
+                    // close the application
+                    Environment.Exit(0);
+                    //gamer.input.ResetToLobby();
                 }
             }
         }
+
+        private static void JoinRoom(GamerEntity gamer, int roomId)
+        {
+            var input = new JoinRoomInput
+            {
+                RoomID = roomId,
+                Token = gamer.accessToken,
+                Name = gamer.account.Info.Name,
+                SkinID = gamer.account.Snake.Skin.EquipID
+            };
+            gamer._lobbyHandler.SendToServer(EClientLobbyCode.JoinRoom, input);
+        }
+
+        private static void QuickJoin(GamerEntity gamer)
+        {
+            Console.WriteLine(gamer.account.Info.Name);
+            var input = new QuickJoinInput
+            {
+                Price = 10,
+                RoomType = (byte)EJoinRoomType.Standard,
+                Token = gamer.accessToken,
+                Name = gamer.account.Info.Name,
+                SkinID = gamer.account.Snake.Skin.EquipID
+            };
+            gamer._lobbyHandler.SendToServer(EClientLobbyCode.QuickJoin, input);
+        }
+
         public static void FConnectToServer(GamerEntity gamer)
         {
             gamer.input.TrySetNextLevel(GamerInput.Level.NotConnect);
@@ -119,9 +147,16 @@ namespace ConsoleApp1
 
         public static void FReceiveToArena(GamerEntity gamer, EnterArenaPacket packet)
         {
+            //if (gamer.input.Now == GamerInput.Level.WaitEnterGaming)
+            //{
+            //    gamer.input.SetLevel(GamerInput.Level.WaitSendLoading);
+            //    gamer._toArenaHandler.SendLoading(100);
+            //    gamer.input.SetLevel(GamerInput.Level.WaitDeletePlayer);
+            //}
+            //gamer.botProxy.GameStart(gamer.account, (byte)gamer.input.SlotID, new BotEvents(gamer, gamer));
             if (gamer.input.TrySetNextLevel(GamerInput.Level.WaitSendLoading))
             {
-                gamer._toArenaHandler.SendLoading(100);            
+                gamer._toArenaHandler.SendLoading(100);
             }
             gamer.botProxy.GameStart(gamer.account, (byte)gamer.input.SlotID, new BotEvents(gamer, gamer));
         }
