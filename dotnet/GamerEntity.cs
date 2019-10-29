@@ -171,6 +171,9 @@ namespace ConsoleApp1
             GamerFlow.FReceiveGamePacket(this, obj,out World);
         }
 
+        [Obsolete]
+        public bool Update(float deltaTime) { return false; }
+
         private void Update()
         {
             GamerFlow.Update(this, TaskAgent.Delay);
@@ -366,6 +369,7 @@ namespace ConsoleApp1
         void Login(string userAddr, ELoginType loginType);
         void Start(string gameUrl);
         void Start();
+        bool Update(float deltaTime);
     }
 
     public interface IFireReceiver

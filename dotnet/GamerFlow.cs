@@ -16,7 +16,7 @@ namespace ConsoleApp1
 {
     public class GamerFlow
     {
-        public static void Update(IGamerEntity gamer, float deltaTime)
+        public static bool Update(IGamerEntity gamer, float deltaTime)
         {
             gamer.input.CheckStayTime();
             if (gamer.input.IsError)
@@ -60,7 +60,7 @@ namespace ConsoleApp1
                 {
                     Console.WriteLine("Game Over.");
                     // close the application
-                    Environment.Exit(0);
+                    //Environment.Exit(0);
                     //gamer.input.ResetToLobby();
                 }
                 else
@@ -68,6 +68,7 @@ namespace ConsoleApp1
                     gamer.botProxy.GameUpdate(TimeSpan.FromMilliseconds(deltaTime)/*TimeSpan.FromMilliseconds(TaskAgent.Delay)*/);
                 }
             }
+            return gamer.input.IsOverGame;
         }
 
         private static void JoinRoom(IGamerEntity gamer, int roomId)
